@@ -30,6 +30,14 @@
     
 //    [[RLGameCenter singleton] authenticateLocalPlayer];
     
+    
+    dispatch_queue_t timerQ = dispatch_queue_create("timerQ", NULL);
+    dispatch_async(timerQ, ^{
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+        [NSThread sleepForTimeInterval:3.0];
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+    });
+    
     NSNumber *pi = [NSNumber numberWithFloat:3.14159];
     NSLog(@"pi as float: %f    pi as int: %d", [pi floatValue], [pi integerValue]);
     
