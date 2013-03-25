@@ -28,8 +28,7 @@
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
     
-//    [[RLGameCenter singleton] authenticateLocalPlayer];
-    
+    [[RLGameCenter singleton] authenticateLocalPlayer];
     
     dispatch_queue_t timerQ = dispatch_queue_create("timerQ", NULL);
     dispatch_async(timerQ, ^{
